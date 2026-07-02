@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────────────────────────────────────────
+   DESIGN TOKENS
+   Ganti nilai di sini untuk rebranding client tanpa menyentuh komponen.
+   ────────────────────────────────────────────────────────────────── */
+:root {
+  /* Brand Colors */
+  --color-brand-primary: #A11D20;      /* maroon - warna asli signature logo */
+  --color-brand-secondary: #7A1518;    /* maroon lebih gelap - hover/depth */
+  --color-brand-accent: #C9A15A;       /* gold muted - aksen premium, senada nuansa fine-dining */
+
+  /* Background & Surface */
+  --color-brand-bg: #FAF7F2;           /* cream, match persis dengan bg logo asli */
+  --color-brand-surface: #ffffff;
+  --color-brand-border: rgba(161, 29, 32, 0.08);
+
+  /* Text Colors */
+  --color-brand-text: #2A1414;         /* coklat-hitam hangat, bukan navy - biar senada maroon */
+  --color-brand-text-button: #ffffff;
+  --color-brand-muted: #7A6B68;        /* abu kecoklatan, senada tone maroon-cream */
+
+  /* Typography */
+  --font-display: Georgia, ui-serif, serif;
+  --font-body: Georgia, ui-serif, serif;
+
+  /* Spacing & Radius */
+  --radius-card: 20px;
+  --radius-btn: 12px;
+  --radius-badge: 999px;
+
+  /* Section Padding */
+  --section-py: 6rem;
+  --section-px: 1.5rem;
+}
+
+/* ──────────────────────────────────────────────────────────────────
+   RESET & BASE
+   ────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-brand-bg);
+  color: var(--color-brand-text);
+  font-family: var(--font-body), system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* ──────────────────────────────────────────────────────────────────
+   SCROLLBAR
+   ────────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-border);
+  border-radius: 3px;
+}
+
+/* ──────────────────────────────────────────────────────────────────
+   SELECTION
+   ────────────────────────────────────────────────────────────────── */
+::selection {
+  background: var(--color-brand-primary);
+  color: #ffffff;
+}
+
+/* ──────────────────────────────────────────────────────────────────
+   SECTION UTILITY
+   ────────────────────────────────────────────────────────────────── */
+@layer utilities {
+  .section-padding {
+    padding-top: var(--section-py);
+    padding-bottom: var(--section-py);
+    padding-left: var(--section-px);
+    padding-right: var(--section-px);
+  }
+
+  .container-wide {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Glassmorphism utility */
+  .glass {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-brand-border);
+  }
+}
+/* ──────────────────────────────────────────────────────────────────
+   ADDITIONAL STYLES
+   ────────────────────────────────────────────────────────────────── */
