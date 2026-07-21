@@ -11,15 +11,16 @@ import { getWhatsAppUrl } from "@/constants/site";
  * - index = 1..4: Scroll Slides
  */
 function getSlideState(p: number, index: number) {
+  const isLast = index === 4;
   const start = index * 0.2;
-  const end = (index + 1) * 0.2;
+  const end = isLast ? 0.88 : (index + 1) * 0.2;
 
-  // Fade-in region: first 20% of the slide's active range
+  // Fade-in region: first 20% of the active range
   const fadeInStart = start;
-  const fadeInEnd = start + 0.04;
+  const fadeInEnd = isLast ? start + 0.02 : start + 0.04;
 
-  // Fade-out region: last 20% of the slide's active range
-  const fadeOutStart = end - 0.04;
+  // Fade-out region: last 20% of the active range
+  const fadeOutStart = isLast ? end - 0.02 : end - 0.04;
   const fadeOutEnd = end;
 
   let opacity = 0;
@@ -31,17 +32,9 @@ function getSlideState(p: number, index: number) {
       const ratio = (p - fadeInStart) / (fadeInEnd - fadeInStart);
       opacity = ratio;
       y = 30 * (1 - ratio);
-    } else if (p > fadeOutStart && index < 4) {
+    } else if (p > fadeOutStart) {
       // Fade out phase: fade down hilang (starts at 0px and moves down to 30px)
-      const ratio = (p - fadeOutStart) / (fadeOutEnd - fadeOutStart);
-      opacity = 1 - ratio;
-      y = 30 * ratio;
-    } else if (index === 4 && p > fadeOutStart) {
-      // Final slide fade-out completely as we transition to Promo
-      const ratio = Math.min(
-        1,
-        (p - fadeOutStart) / (fadeOutEnd - fadeOutStart),
-      );
+      const ratio = Math.min(1, (p - fadeOutStart) / (fadeOutEnd - fadeOutStart));
       opacity = 1 - ratio;
       y = 30 * ratio;
     } else {
@@ -90,9 +83,8 @@ export function Hero() {
   const p = maxScroll > 0 ? Math.min(1, Math.max(0, scrollY / maxScroll)) : 0;
 
   // Calculate translation & opacity for the main wrapper when scrolling past the Hero track (starts at 4 * h)
-  const offset = Math.max(0, scrollY - 4 * h);
-  const wrapperY = -offset;
-  const wrapperOpacity = Math.max(0, 1 - offset / h);
+  const wrapperY = 0; // Stay in place
+  const wrapperOpacity = 1;
   const isVisible = scrollY < 5 * h;
 
   // Calculate states for each slide
