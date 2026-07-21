@@ -24,7 +24,7 @@ export const SITE_CONFIG = {
 
   /** Nomor WhatsApp (format internasional, tanpa +) */
   whatsapp: {
-    number: "6285117407455",
+    number: "6281234567890",
     message:
       "Halo, saya ingin melakukan reservasi atau bertanya mengenai menu di Tanta Resto & Lounge.",
   },

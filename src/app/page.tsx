@@ -59,7 +59,7 @@ export default function HomePage() {
             name: SITE_CONFIG.name,
             image: SITE_CONFIG.url + "/tanta.png",
             url: SITE_CONFIG.url,
-            telephone: "+6285117407455",
+            telephone: "+6281234567890",
             priceRange: "$$$",
             address: {
               "@type": "PostalAddress",

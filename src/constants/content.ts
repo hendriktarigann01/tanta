@@ -225,7 +225,7 @@ export const LOCATION_CONTENT: LocationContent = {
   subheadline: "SOGO Plaza Senayan, Lantai 2, Jakarta Pusat",
   description: "Terletak eksklusif di dalam SOGO Department Store, Level 2 Plaza Senayan, Jakarta. Akses masuk mudah dan nyaman dari area parkir atau pintu mal utama. Sangat ideal untuk bersantap siang bisnis, afternoon tea yang tenang, atau makan malam intim.",
   address: "Plaza Senayan, SOGO Department Store Level 2, Jl. Asia Afrika No.8, Gelora, Tanah Abang, Jakarta Pusat 10270",
-  phone: "+62 851-1740-7455",
+  phone: "+62 812-3456-7890",
   hours: {
     "Senin - Minggu": "10.00 – 22.00 (Setiap Hari)",
   }
@@ -307,7 +307,7 @@ export const FAQ_CONTENT: FAQContent = {
     {
       id:       "reservation",
       question: "Bagaimana cara melakukan reservasi Private Room?",
-      answer:   "Anda dapat menghubungi kami langsung melalui tombol chat WhatsApp (+62 851-1740-7455) untuk memesan ruang VIP atau meja rombongan minimal H-1 sebelum kunjungan.",
+      answer:   "Anda dapat menghubungi kami langsung melalui tombol chat WhatsApp (+62 812-3456-7890) untuk memesan ruang VIP atau meja rombongan minimal H-1 sebelum kunjungan.",
     },
     {
       id:       "location-detail",
